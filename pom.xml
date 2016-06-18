@@ -77,7 +77,7 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.19.1</version>
                 <configuration>
-                    <parallel>methods</parallel>
+                    <parallel>classes</parallel>
                     <threadCount>${threads}</threadCount>
                     <systemProperties>
                         <browser>${browser}</browser>
