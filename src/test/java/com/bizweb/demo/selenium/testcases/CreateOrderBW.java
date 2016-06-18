@@ -5,19 +5,23 @@ package com.bizweb.demo.selenium.testcases;
  */
 
 import com.bizweb.demo.selenium.DriverFactory;
-import com.bizweb.demo.selenium.pageObjects.CreateOrderPage;
-import com.bizweb.demo.selenium.pageObjects.LoginPage;
-import com.bizweb.demo.selenium.pageObjects.OrderPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Test;
 
-import org.testng.Assert;
+import org.junit.Test;
+import org.junit.Assert;
+
+//import org.testng.annotations.Test;
+//import org.testng.Assert;
+
+import com.bizweb.demo.selenium.pageObjects.CreateOrderPage;
+import com.bizweb.demo.selenium.pageObjects.LoginPage;
+import com.bizweb.demo.selenium.pageObjects.OrderPage;
 
 public class CreateOrderBW extends DriverFactory{
-    @Test
-    private void createOneOrder() throws Exception {
+//    @Test
+    public void createOneOrder() throws Exception {
         WebDriver driver = DriverFactory.getDriver();
 
         String merchantDomain = "https://anteo.bizwebvietnam.net";

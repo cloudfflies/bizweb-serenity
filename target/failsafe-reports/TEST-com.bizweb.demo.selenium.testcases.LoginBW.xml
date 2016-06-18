@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="54.019" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.bizweb.demo.selenium.testcases.LoginBW" time="26.639" tests="2" errors="1" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2016.1.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib"/>
     <property name="java.vm.version" value="25.77-b03"/>
-    <property name="browser" value="phantomjs"/>
+    <property name="browser" value="chrome"/>
     <property name="user.country.format" value="GB"/>
     <property name="gopherProxySet" value="false"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
@@ -15,23 +15,22 @@
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="threads" value="1"/>
     <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="idea.launcher.port" value="7532"/>
+    <property name="idea.launcher.port" value="7535"/>
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
-    <property name="remote" value="true"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="/Users/an/dev/bizweb-test"/>
     <property name="java.runtime.version" value="1.8.0_77-b03"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/endorsed"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="seleniumGridURL" value="http://localhost:4444/wd/hub"/>
+    <property name="idea.modules.paths.file" value="/Users/an/Library/Caches/IntelliJIdea2016.1/Maven/idea-projects-state-8f7f1f58.properties"/>
     <property name="java.io.tmpdir" value="/var/folders/lh/5nv6f5jd1n9_9yr65mf1_ycc0000gn/T/"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3/bin/m2.conf"/>
+    <property name="classworlds.conf" value="/private/var/folders/lh/5nv6f5jd1n9_9yr65mf1_ycc0000gn/T/idea-452-mvn.conf"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/an/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -50,7 +49,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre"/>
-    <property name="sun.java.command" value="com.intellij.rt.execution.application.AppMain org.codehaus.classworlds.Launcher -Didea.version=2016.1.3 clean install -Dthreads=1 -Dremote=true -DseleniumGridURL=http://localhost:4444/wd/hub -Dbrowser=phantomjs"/>
+    <property name="sun.java.command" value="com.intellij.rt.execution.application.AppMain org.codehaus.classworlds.Launcher -Didea.version=2016.1.3 clean install -Dthreads=1 -Dbrowser=chrome"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -68,5 +67,38 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="createOneOrder" classname="com.bizweb.demo.selenium.testcases.CreateOrderBW" time="53.381"/>
+  <testcase name="caseDung" classname="com.bizweb.demo.selenium.testcases.LoginBW" time="9.294"/>
+  <testcase name="caseGanDung" classname="com.bizweb.demo.selenium.testcases.LoginBW" time="26.63">
+    <error message="Timed out after 20 seconds. Unable to locate the element&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;&#10;System info: host: &apos;AnDT-PC-9.local&apos;, ip: &apos;192.168.0.111&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.3&apos;, java.version: &apos;1.8.0_77&apos;&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: 
+Timed out after 20 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'AnDT-PC-9.local', ip: '192.168.0.111', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.11.3', java.version: '1.8.0_77'
+Driver info: driver.version: unknown
+	at com.bizweb.demo.selenium.testcases.LoginBW.inputUsernameAndPasswordAndclickButton(LoginBW.java:30)
+	at com.bizweb.demo.selenium.testcases.LoginBW.caseGanDung(LoginBW.java:44)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"id('Email')"}
+  (Session info: chrome=51.0.2704.103)
+  (Driver info: chromedriver=2.22.397929 (fb72fb249a903a0b1041ea71eb4c8b3fa0d9be5a),platform=Mac OS X 10.11.3 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 10 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'AnDT-PC-9.local', ip: '192.168.0.111', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.11.3', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={chromedriverVersion=2.22.397929 (fb72fb249a903a0b1041ea71eb4c8b3fa0d9be5a), userDataDir=/var/folders/lh/5nv6f5jd1n9_9yr65mf1_ycc0000gn/T/.org.chromium.Chromium.SgMg5z}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=51.0.2704.103, platform=MAC, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 5968219b9910343cde7df27611937b15
+*** Element info: {Using=xpath, value=id('Email')}
+	at com.bizweb.demo.selenium.testcases.LoginBW.inputUsernameAndPasswordAndclickButton(LoginBW.java:30)
+	at com.bizweb.demo.selenium.testcases.LoginBW.caseGanDung(LoginBW.java:44)
+</error>
+    <system-out><![CDATA[ 
+Current Operating System: MAC OS X
+Current Architecture: x86_64
+Current Browser Selection: CHROME
+ 
+DDaay laf clearCoo
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 2.22.397929 (fb72fb249a903a0b1041ea71eb4c8b3fa0d9be5a) on port 26902Only local connections are allowed.]]></system-err>
+  </testcase>
 </testsuite>
