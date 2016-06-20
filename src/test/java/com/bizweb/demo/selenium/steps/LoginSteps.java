@@ -1,6 +1,6 @@
 package com.bizweb.demo.selenium.steps;
 
-import com.bizweb.demo.selenium.pages.SignUpPage;
+import com.bizweb.demo.selenium.pages.LoginPage;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 
@@ -9,40 +9,30 @@ import org.junit.Assert;
  */
 public class LoginSteps {
 
-    SignUpPage signUpPage;
+    LoginPage loginPage;
 
     @Step
-    public void openSignUpPage() {
-        signUpPage.open();
-    }
-
-    @Step
-    public void fillFirstName(String firstName) {
-        signUpPage.fillFirstName(firstName);
-    }
-
-    @Step
-    public void fillLastName(String lastName) {
-        signUpPage.fillLastName(lastName);
+    public void openLoginPage() {
+        loginPage.open();
     }
 
     @Step
     public void fillEmail(String email) {
-        signUpPage.fillEmail(email);
+        loginPage.fillEmail(email);
     }
 
     @Step
     public void fillPassword(String password) {
-        signUpPage.fillPassword(password);
+        loginPage.fillPassword(password);
     }
 
     @Step
-    public void clickSignUpButton() {
-        signUpPage.clickSignUpButton();
+    public void clickLoginButton() {
+        loginPage.clickSignUpButton();
     }
 
     @Step
-    public void verifyIsError(Boolean isError) {
-        Assert.assertEquals(isError, signUpPage.isError());
+    public void verifyIsError(int number) {
+        Assert.assertEquals(number, loginPage.numberOfError());
     }
 }

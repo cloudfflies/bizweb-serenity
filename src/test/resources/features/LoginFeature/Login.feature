@@ -4,15 +4,13 @@ Feature: Bizweb tenant signup
   I want to be able to signup an account
 
   Scenario Outline: Signup customer account
-    Given I want to sign up an account
-    When I fill first name with '<first_name>'
-    When I fill last name with '<last_name>'
-    When I fill email with '<email>'
-    When I fill password with '<password>'
-    When I click SignUp button
-    Then I should '<is_error>' see error message
+    Given I want to login to an account
+    When I fill email to login form with '<email>'
+    When I fill password to login form with '<password>'
+    When I click Login button
+    Then I should see in login form '<number_of_error>' error messages
     Examples:
-      | first_name | last_name | email       | password | is_error|
-      | An         | Teo       | abc@art.com | 123456   | not     |
-      | An         |           |             |          |         |
-      | Teo        | Cucumer   | abc@art.com | wr2343   |         |
+      | email       | password | number_of_error |
+      |             |          | 2               |
+      | abc@art.com | 23456    | 1               |
+      | abc@art.com |          | 1               |
