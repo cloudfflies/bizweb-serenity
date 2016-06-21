@@ -9,7 +9,7 @@ import net.thucydides.core.annotations.Steps;
 /**
  * Created by an on 20/06/2016.
  */
-public class SignUpDefinations {
+public class SignUpDefinitions {
 
     @Steps
     SignUpSteps signUpSteps;
