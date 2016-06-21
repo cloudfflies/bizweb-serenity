@@ -8,6 +8,8 @@ import org.jruby.RubyProcess;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,21 +20,22 @@ import java.util.stream.Collectors;
  */
 public class ProductListGridSection extends PageObject {
 
-    @FindBy(xpath = "//div[@class='product-list-grid']")
-    private WebElement ListGridSection;
+    @FindBy(xpath = "id('add_succes')")
+    WebElementFacade successDialog;
 
-    @FindBy(xpath = "//div[@class='product-carousel']")
-    private List<WebElement> products;
+    public boolean isDialogDisplay() {
+        successDialog.waitUntilVisible();
+        return successDialog.isPresent();
+    }
 
-//    public ProductListGridSection(WebDriver driver) {
-//        super(driver);
-//    }
+    public boolean isNotDialogDisplay() {
+        successDialog.waitUntilNotVisible();
+        return successDialog.isCurrentlyVisible();
+    }
 
     public List<product> getProductsList() {
-        System.out.println("dday la size");
-//        System.out.println(products.size());
-        System.out.println(findAll(By.xpath("//div[@class='product-carousel']")).size());
-        return findAll(By.xpath("//div[@class='product-carousel']"))
+
+        return findAll(By.cssSelector(".product-list-grid .product-carousel"))
                 .stream()
                 .map(ProductListGridSection::convertToProduct)
                 .collect(Collectors.toList());
@@ -41,17 +44,17 @@ public class ProductListGridSection extends PageObject {
     public Optional<product> getProductFor(String productName) {
         return getProductsList()
                 .stream()
-                .filter(item -> item.getName().equals(productName))
+                .filter(item -> item.getName().contentEquals(productName))
                 .findFirst();
     }
 
     private static product convertToProduct(WebElement productElement) {
-        WebElement productImageElement = productElement.findElement(By.xpath("//a[@class='product-image']"));
-        WebElement imgElement = productElement.findElement(By.xpath("//img[@class='img-responsive']"));
-        WebElement productNameElement = productElement.findElement(By.xpath("//h3[@class='product-name']/a"));
-        WebElement productPriceElement = productElement.findElement(By.xpath("//p[@class='product-price']"));
-        WebElement addProductButton = productElement.findElement(By.xpath("//a[@class='product-atc']"));
-
+        WebElement productImageElement = productElement.findElement(By.cssSelector("a.product-image"));
+        WebElement imgElement = productElement.findElement(By.cssSelector("img.img-responsive"));
+        WebElement productNameElement = productElement.findElement(By.cssSelector("h3.product-name"));
+        WebElement productPriceElement = productElement.findElement(By.cssSelector("p.product-price"));
+        WebElement addProductButton = productElement.findElement(By.cssSelector("a.product-atc"));
+        System.out.println(productNameElement.getText());
         return new product(productNameElement.getText(),
                 productNameElement.getAttribute("href"),
                 imgElement.getAttribute("src"),

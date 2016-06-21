@@ -1,5 +1,6 @@
 package com.bizweb.demo.selenium.model;
 
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.WebElement;
 
 /**

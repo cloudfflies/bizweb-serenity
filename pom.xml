@@ -17,6 +17,8 @@
 
         <webdriver.driver>firefox</webdriver.driver>
         <surefire.rerunFailingTestsCount>5</surefire.rerunFailingTestsCount>
+        <restart.browser.each.scenario>true</restart.browser.each.scenario>
+        <thucydides.restart.browser.frequency>1</thucydides.restart.browser.frequency>
     </properties>
 
     <dependencies>
