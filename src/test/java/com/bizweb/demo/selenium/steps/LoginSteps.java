@@ -1,5 +1,6 @@
 package com.bizweb.demo.selenium.steps;
 
+import com.bizweb.demo.selenium.pages.HomePage;
 import com.bizweb.demo.selenium.pages.LoginPage;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
@@ -10,6 +11,7 @@ import org.junit.Assert;
 public class LoginSteps {
 
     LoginPage loginPage;
+    HomePage homePage;
 
     @Step
     public void openLoginPage() {
@@ -34,5 +36,10 @@ public class LoginSteps {
     @Step
     public void verifyIsError(int number) {
         Assert.assertEquals(number, loginPage.numberOfError());
+    }
+
+    @Step
+    public void verifyRedirectHomePage() {
+        homePage.compatibleWithUrl("gooog.le");
     }
 }

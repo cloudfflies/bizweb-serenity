@@ -3,8 +3,9 @@ Feature: Bizweb tenant signup
   As a customer
   I want to be able to signup an account
 
-  Scenario Outline: Signup customer account
-    Given I want to login to an account
+  Scenario Outline: Signin customer account, fail
+    Given Prepare browser
+      And I want to login to an account
     When I fill email to login form with '<email>'
     When I fill password to login form with '<password>'
     When I click Login button
@@ -14,3 +15,11 @@ Feature: Bizweb tenant signup
       |             |          | 2               |
       | abc@art.com | 23456    | 1               |
       | abc@art.com |          | 1               |
+
+    Scenario: Sign in customer account successfully
+    Given Prepare browser
+      And I want to login to an account
+    When I fill email to login form with 'abc@art.com'
+    When I fill password to login form with '123456'
+    When I click Login button
+    Then I should see home page

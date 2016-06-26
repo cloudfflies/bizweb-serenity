@@ -38,4 +38,9 @@ public class LoginDefinitions {
     public void verifySuccess(int number) throws Throwable {
             loginSteps.verifyIsError(number);
     }
+
+    @Then("I should see home page")
+    public void verifyHomePage() throws Throwable {
+        loginSteps.verifyRedirectHomePage();
+    }
 }
